@@ -1,0 +1,159 @@
+{
+  "info": {
+    "_postman_id": "3c2b1450-36b4-4e7e-81aa-devcampbe2",
+    "name": "DevCamp BE2 - Book Store API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:3000"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET All Books",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{BASE_URL}}/books",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "books"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET Book By ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{BASE_URL}}/books/1",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "books",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "GET Books By Author (Bonus)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{BASE_URL}}/books?author=Tolkien",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "books"
+          ],
+          "query": [
+            {
+              "key": "author",
+              "value": "Tolkien"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST Create Book",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"The Hobbit\",\n  \"author\": \"J.R.R. Tolkien\",\n  \"isbn\": \"9780261102217\",\n  \"price\": 14.99,\n  \"inStock\": true\n}"
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/books",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "books"
+          ]
+        }
+      }
+    },
+    {
+      "name": "PUT Update Book",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"The Hobbit - Updated\",\n  \"author\": \"J.R.R. Tolkien\",\n  \"isbn\": \"9780261102217\",\n  \"price\": 16.99,\n  \"inStock\": true\n}"
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/books/1",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "books",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "DELETE Book",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "{{BASE_URL}}/books/1",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "books",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "POST Invalid Price Test",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Bad Price\",\n  \"author\": \"Test\",\n  \"isbn\": \"bad-price-1\",\n  \"price\": -5,\n  \"inStock\": true\n}"
+        },
+        "url": {
+          "raw": "{{BASE_URL}}/books",
+          "host": [
+            "{{BASE_URL}}"
+          ],
+          "path": [
+            "books"
+          ]
+        }
+      }
+    }
+  ]
+}
