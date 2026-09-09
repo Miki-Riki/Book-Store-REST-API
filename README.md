@@ -34,7 +34,7 @@ npm run dev
 
 Server: `http://localhost:3000`
 
-## Primjer POST bodyja
+## Primjer POST body-a
 
 ```json
 {
